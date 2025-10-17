@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ibmec Ideas - Log in Hubs</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        header div a img {
+            /* Adiciona uma transição suave de 0.3s para a propriedade 'transform' */
+            transition: transform 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="page-loginhubs">
+
+    <header>
+        <div>
+            <a href="index.html">
+                <img src="./assets/Logohubs.svg" alt="Logo Ibmec Hubs" style="width:180px; height:180px;">
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <h2>Login</h2>
+
+        <form action="/login" method="post">
+            
+            <fieldset>
+                <legend>Acesso</legend>
+
+                <div>
+                    <label for="usuario">CNPJ, E-mail ou Nome da empresa</label>
+                    <input type="text" id="usuario" name="usuario" placeholder="Insira CNPJ, E-mail ou Nome" required>
+                </div>
+
+                <div>
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" name="senha" placeholder="Insira sua senha" required>
+                </div>
+            </fieldset>
+
+            <p>
+                <a href="#">Esqueci minha senha</a>
+            </p>
+
+            <button type="submit">Sign in</button>
+            <button type="button" onclick="location.href='login.html'">Não tenho conexão Hubs</button>
+        </form>
+    </main>
+
+    <footer>
+        <p><a href="#">Não tem conta? Cadastre-se</a></p>
+    </footer>
+
+    <script>
+        // 1. Seleciona a imagem do logo dentro do link
+        const logoHubs = document.querySelector('header div a img');
+
+        // 2. Adiciona um "ouvinte" que dispara uma função quando o mouse passa por cima do logo
+        logoHubs.addEventListener('mouseover', function() {
+            // Aumenta o tamanho do logo em 5%
+            this.style.transform = 'scale(1.05)';
+            this.style.cursor = 'pointer';
+        });
+
+        // 3. Adiciona um "ouvinte" que dispara uma função quando o mouse sai de cima do logo
+        logoHubs.addEventListener('mouseout', function() {
+            // Retorna o logo ao seu tamanho original
+            this.style.transform = 'scale(1)';
+        });
+    </script>
+    </body>
+</html>

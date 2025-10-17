@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ibmec Ideas - Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        main div a img {
+            /* Adiciona uma transição suave de 0.3s para a propriedade 'transform' */
+            transition: transform 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="page-auth">
+
+    <header>
+        <h1>Ibmec Ideas</h1>
+    </header>
+
+    <main>
+        <div>
+            <a href="index.html">
+                <img src="./assets/Logo.svg" alt="Logo Ibmec Ideas" style="width:180px; height:180px;">
+            </a>
+        </div>
+        
+        <form action="/cadastro" method="post">
+            <h2>Cadastre-se</h2>
+            <legend>Informações da Empresa</legend>
+            <div>
+                <label for="nomeEmpresa">Nome da Empresa</label>
+                <input type="text" id="nomeEmpresa" name="nomeEmpresa" placeholder="Insira o nome da empresa" required>
+            </div>
+
+            <div>
+                <label for="cnpj">CNPJ</label>
+                <input type="text" id="cnpj" name="cnpj" placeholder="XX.XXX.XXX/0000-XX" required>
+            </div>
+
+            <div>
+                <label for="areaAtuacao">Área de atuação</label>
+                <select id="areaAtuacao" name="areaAtuacao" required>
+                    <option value="">Selecione a área de atuação</option>
+                    <option value="tecnologia">Tecnologia</option>
+                    <option value="financeiro">Financeiro</option>
+                    <option value="marketing">Marketing</option>
+                    <option value="outra">Outra</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="porte">Porte</label>
+                <select id="porte" name="porte" required>
+                    <option value="">Selecione o porte</option>
+                    <option value="pequeno">Pequeno</option>
+                    <option value="medio">Médio</option>
+                    <option value="grande">Grande</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="tipoDemanda">Tipo de demanda</label>
+                <select id="tipoDemanda" name="tipoDemanda" required>
+                    <option value="">Selecione a demanda</option>
+                    <option value="inovacao">Inovação</option>
+                    <option value="consultoria">Consultoria</option>
+                    <option value="desenvolvimento">Desenvolvimento</option>
+                    <option value="outra">Outra</option>
+                </select>
+            </div>
+
+            <legend>Credenciais</legend>
+
+            <div>
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="username@email.com" required>
+            </div>
+
+            <div>
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" placeholder="Insira sua senha" required>
+            </div>
+
+            <p>
+                <label for="termos">Li e aceito os <a href="#">Termos de Uso</a></label> <input type="checkbox" id="termos" name="termos" required>
+            </p>
+
+            <button type="submit">Criar conta</button>
+            <button type="button" onclick="location.href='loginhubs.html'">Ibmec HUBs</button>
+        </form>
+    </main>
+
+    <footer>
+        <p><a href="login.html">Já tem conta? Faça Log-in</a></p>
+    </footer>
+
+    <script>
+        // 1. Seleciona o elemento da imagem (logo)
+        const logo = document.querySelector('main div a img');
+
+        // 2. Adiciona um "ouvinte" que dispara uma função quando o mouse passa por cima do logo
+        logo.addEventListener('mouseover', function() {
+            // Aumenta o tamanho do logo em 5%
+            this.style.transform = 'scale(1.05)';
+        });
+
+        // 3. Adiciona um "ouvinte" que dispara uma função quando o mouse sai de cima do logo
+        logo.addEventListener('mouseout', function() {
+            // Retorna o logo ao seu tamanho original
+            this.style.transform = 'scale(1)';
+        });
+    </script>
+    </body>
+</html>
